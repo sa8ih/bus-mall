@@ -46,3 +46,12 @@ for (var j = 0; j < 3; j++) {
 }
 //^^set first 3 images in justViewed = false// also we can splice them(remove from array)
 currentImages.splice(0, 3);
+//CurrentImages is done!!!! Now Populate table(Render)
+
+function render() {
+  for (var k = 1; k < 4; k++) {//set to 1 and 4 this way file name will math DOM//
+    document.getElementById(('img_' + k)).setAttribute('src', currentImages[k - 1].imgPath);
+    currentImages[k - 1].elementId = k;
+  }
+}
+//set up a funtion that will be called upon when item is clicked. Using Event Trigger//
