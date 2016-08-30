@@ -39,3 +39,10 @@ function randomizer() {
   }
 //^^This will make loop run untill i hits 3. **test** Passed!
 //for some reason my array is not filling?!?!? confused, and moving forward for now***
+
+//ran console.log - currentImages displaying 6 objects in array, first 3 have already been viewed.
+for (var j = 0; j < 3; j++) {
+  currentImages[j].justViewed = false;
+}
+//^^set first 3 images in justViewed = false// also we can splice them(remove from array)
+currentImages.splice(0, 3);
