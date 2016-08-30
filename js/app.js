@@ -2,11 +2,11 @@ var allImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfas
 var images [];
 
 function Image(imgName, imgPath) {
-  this.imgName = imgName; //Name of the picture.
-  this.imgPath = 'images/' + imgPath; //File path of the picture.
-  this.clicked = 0; //How many times this picture has been clicked.
-  this.viewed = 0; //How many times this picture has been viewed.
-  this.imageId = ''; //The ID to be stored when inserting the element into the DOM.
+  this.imgName = imgName;
+  this.imgPath = 'images/' + imgPath;
+  this.clicked = 0;
+  this.viewed = 0;
+  this.imageId = '';
 };
 
 function randomizes() {
