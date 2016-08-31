@@ -1,41 +1,42 @@
-var allImages = []; //Empty array to hold all image objects
-var currentImages = ['', '', '']; //currentImages needs to be initialized with 3 blank values to work properly
-var iterations = 0; //Keep track of the number of times images have been looked at
+var allImages = [];//emput array to store all my messages
+var currentImages = ['', '', '']; //This is that will post images
+var iterations = 0; //Keep track of the number of times imgs hve been looked at
 
-//Fill the allImages array with all required image objects
 function createImageArray() {
   var imagePaths = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 
-  //Constructor function for each new image object
+
   function CreateImage(imgName, imgPath) {
-    this.imgName = imgName; //Name of the picture.
-    this.imgPath = 'images/' + imgPath; //File path of the picture.
-    this.clicked = 0; //How many times this picture has been clicked.
-    this.viewed = 0; //How many times this picture has been viewed.
+    this.imgName = imgName;
+    this.imgPath = 'images/' + imgPath; //This will be used to create an array with path to file
+    this.clicked = 0;
+    this.viewed = 0;
     this.justViewed = false; //The picture has not been viewed recently
-    this.allSuck = 0;
+    this.allSuck = 0;// honestly mimiced this function a little.
     this.elementId;
   };
 
-  //Create an object for each image, stored in the allImages array
+
   for (var h = 0; h < imagePaths.length; h++) {
     allImages.push(new CreateImage(imagePaths[h].split('.')[0], imagePaths[h]));
-  }
+  }//^^here we are creating an object for each image.
 }
 
-//Change currentImages to be an array of 3 images randomly chosen with no repeats of the recently viewed images.
+
+//Change currentImages
+
 function randomizer() {
-  for (var i = 0; i < 3; i++) { //Run this 3 times to get 3 images.
+  for (var i = 0; i < 3; i++) {
     var randomNum = Math.floor(Math.random() * allImages.length); //Pick a random number between 0 and 19.
     if (allImages[randomNum].justViewed === false) { //If the randomly selected image has not been viewed.
       currentImages.push(allImages[randomNum]); //Add the selected image to the currentImages array.
       allImages[randomNum].justViewed = true; //And store that it has been recently viewed.
       allImages[randomNum].viewed++; //Increment the number of times this image has been viewed.
     } else {
-      i--; //If it has been recently viewed, do nothing and run the loop an additional time.
+      i--; //was having trouble with this one here.
     }
   }
-  //currentImages will have 6 items, with the last 3 being the most recent images, and the first 3 being the previous set. Since we know the first 3 are not matches to the last 3 from our previous for loop and if statement, we can safely set the first 3 images' justViewed flag to false.
+
   for (var j = 0; j < 3; j++) {
     currentImages[j].justViewed = false;
   }
