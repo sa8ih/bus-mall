@@ -28,11 +28,10 @@ p {
 }
 
 button {
-  font-size: 30px;
-  width: 250px;
+  font-size: 50px;
+  width: 100px;
   margin-left: calc(50% - 125px);
-  background-color: #00b28f;
-  color: #fff;
+
   margin-top: 40px;
   margin-bottom: 200px;
   border-radius: 5px;
