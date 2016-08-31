@@ -99,7 +99,7 @@ function showImages() {
     paragraphElements[v].style.display = 'none';
   }
   var btn = document.getElementById('button');
-  btn.textContent = 'These all suck';
+  btn.textContent = 'I HATE THEM!';
   btn.removeEventListener('click', showImages);
   btn.addEventListener('click', selectImage);
 }
