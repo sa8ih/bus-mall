@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="reset.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/header_footer.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
   </head>
 
   <body>
+    <header>
+      <h1>BusMall</h1>
+    </header>
+
+    <h2>Welcome to the BusMall focus group app!</h2>
+    <p>You will be shown a series of images in groups of 3.</p>
+    <p>Simply click on the one that most appeals to you. When you are finished, you can see how many times each item was viewed compared to how many times you clicked on it!</p>
+
     <img id="img_1"></img>
     <img id="img_2"></img>
     <img id="img_3"></img>
 
-    <table>
-      <thead>
-        <td></td>
-        <td>Viewed</td>
-        <td>Clicked</td>
-      </thead>
-      <tbody id="table_body">
-      </tbody>
-    </table>
-    <script src="app.js"></script>
+    <button id="button">I'm ready!</button>
+
+    <div id="chart_container">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <footer>
+    </footer>
+    <script src="js/chart.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
